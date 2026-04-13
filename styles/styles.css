@@ -1,0 +1,151 @@
+/* ==========================================================================
+   FONT-FACE DEFINITIONS
+   ========================================================================== */
+
+   @font-face {
+    font-family: 'Fedaro';
+    src: url('../fonts/Fedaro.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Marykate';
+    src: url('../fonts/Marykate.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ==========================================================================
+   MAIN LAYOUT - CSS GRID
+   ========================================================================== */
+
+.page-layout {
+    display: grid;
+    grid-template-columns: var(--gutter) var(--main-column) var(--gutter);
+    grid-template-rows: auto auto auto 1fr auto;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: var(--brand-font-body);
+    background-color: var(--brand-tilite-purple);
+    color: var(--brand-white-almost);
+}
+
+.header, 
+.main-content, 
+.footer {
+    grid-column: 2;
+}
+
+/* ==========================================================================
+   GLOBAL INTERACTIVE STATES
+   ========================================================================== */
+
+a {
+    color: var(--brand-white-almost);
+    transition: opacity 0.2s ease, outline 0.1s ease;
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+a:focus-visible {
+    outline: 3px solid var(--brand-green);
+    outline-offset: 4px;
+    border-radius: 2px;
+}
+
+a:active {
+    transform: translateY(1px);
+}
+
+/* ==========================================================================
+   HERO & INTRO
+   ========================================================================== */
+
+.header {
+    padding: 3rem 0;
+    justify-self: center;
+}
+
+.header__logo-text {
+    font-family: var(--brand-font-heading);
+    font-size: clamp(2.5rem, 8vw, 4rem);
+}
+
+.hero__title {
+    font-family: var(--brand-font-social-heading);
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.quirky-note {
+    font-family: var(--brand-font-cats);
+    font-size: 1.5rem;
+    line-height: 1.4;
+    max-width: 50ch;
+    margin: 0 auto 2rem;
+    text-align: center;
+    color: var(--brand-green-light);
+}
+
+.intro {
+    display: grid;
+    gap: 2rem;
+    justify-items: center; 
+    text-align: center;
+}
+
+.intro__text {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    max-width: 60ch;
+}
+
+/* ==========================================================================
+   REDIRECT BUTTON (REUSING COFFEE-LINK LOGIC)
+   ========================================================================== */
+
+.cta-button {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: var(--brand-white-almost);
+    color: var(--brand-tilite-purple);
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.25rem;
+    width: fit-content;
+    margin: 1rem auto;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.cta-button:hover {
+    opacity: 1;
+    background-color: var(--brand-green-light);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:focus-visible {
+    outline: 4px solid var(--brand-green);
+    outline-offset: 6px;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+
+.footer {
+    padding: 2.5rem 0;
+    border-top: 1px solid var(--brand-white-almost); 
+    align-self: end;
+    text-align: center;
+}
